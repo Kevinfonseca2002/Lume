@@ -1,11 +1,11 @@
 import {Router} from "express";
-import { buscarTienda, crearTienda, actualizarTienda, borrarTienda} from "../Controllers/tiendas.controllers.js";
+import { findStore, createStore, updateStore, deleteStore} from "../Controllers/stores.controllers.js";
 
 const storesRouter = Router();
 
-storesRouter.get("/:nombre", buscarTienda);
-storesRouter.post("/", crearTienda);
-storesRouter.put("/:nombre", actualizarTienda);
-storesRouter.delete("/:nombre", borrarTienda);
+storesRouter.get("/:name", findStore);
+storesRouter.post("/", createStore);
+storesRouter.put("/:name", updateStore);
+storesRouter.delete("/:name", deleteStore);
 
 export default storesRouter

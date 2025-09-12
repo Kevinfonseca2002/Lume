@@ -5,10 +5,16 @@ import helmet from "helmet";
 import storesRouter from "./routes/storesRoutes.js";
 import express from "express"
 import userRouter from "./routes/userRouter.js";
+import eventsRouter from "./routes/eventsRoutes.js";
+
 
 const app = express();
 
+app.use(express.json);
 
-app.use("/tienda",storesRouter);
-app.use("/usuario",userRouter);
+
+app.use("/store",storesRouter);
+app.use("/user",userRouter);
+app.use("/events", eventsRouter);
+
 export default app;
